@@ -18,6 +18,8 @@ namespace DataBinding_Sample
 {
     class Student : INotifyPropertyChanged
     {
+        public string Age { get; set; }
+        public string Id { get; set; }
         private string m_Name;
         public string Name
         {
