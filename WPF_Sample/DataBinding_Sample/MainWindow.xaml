@@ -40,6 +40,15 @@
                     <TextBlock Text="{Binding Age}"/>
                 </StackPanel>
             </TabItem>
+            <TabItem Header="ItemSource">
+                <StackPanel>
+                    <TextBox Name="tbtItemId"/>
+                    <ListBox Name="listboxStus">
+                        
+                    </ListBox>
+                    
+                </StackPanel>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

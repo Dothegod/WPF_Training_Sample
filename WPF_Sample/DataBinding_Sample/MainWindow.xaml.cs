@@ -24,6 +24,7 @@ namespace DataBinding_Sample
         public MainWindow()
         {
             InitializeComponent();
+            ItemSourceBinding();
         }
     }
 }
