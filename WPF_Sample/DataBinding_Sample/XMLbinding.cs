@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace DataBinding_Sample
 {
@@ -29,6 +30,18 @@ namespace DataBinding_Sample
 
             listviewXML.DataContext = xpd;
             listviewXML.SetBinding(ListView.ItemsSourceProperty, new Binding());
+        }
+        private void ButtonNameT_Click_1(object sender, RoutedEventArgs e)
+        {
+            XDocument doc = XDocument.Load(@"D:\MyProject\GitHub\WPF_Training_Sample\WPF_Sample\DataBinding_Sample\StuInfo.xml");
+            listviewXML.ItemsSource =
+                from element in doc.Descendants("student")
+                where element.Element("Name").Value.StartsWith("T")
+                select new Student()
+                {
+                    Id = element.Attribute("Id").Value,
+                    Name = element.Element("Name").Value,
+                };
         }
     }
 }
