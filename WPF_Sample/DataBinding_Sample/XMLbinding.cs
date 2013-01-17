@@ -21,12 +21,14 @@ namespace DataBinding_Sample
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private void ButtonXML_Click_1(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
-            ItemSourceBinding();
-            DataTemplateBinding();
-        }
+            XmlDataProvider xpd = new XmlDataProvider();
+            xpd.Source = new Uri(@"D:\MyProject\GitHub\WPF_Training_Sample\WPF_Sample\DataBinding_Sample\StuInfo.xml");
+            xpd.XPath = @"/students/student";
 
+            listviewXML.DataContext = xpd;
+            listviewXML.SetBinding(ListView.ItemsSourceProperty, new Binding());
+        }
     }
 }

@@ -4,9 +4,29 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:DataBinding_Sample"
         Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <XmlDataProvider x:Key="xpd" XPath="/folders/folder">
+            <x:XData>
+                <folders xmlns="">
+                    <folder Name="books">
+                        <folder Name="computer">
+                            <folder Name="MFC"/>
+                            <folder Name="WPF"/>
+                            <folder Name="C#"/>
+                        </folder>
+                        <folder Name="Other">
+                            <folder Name="Art"/>
+                            <folder Name="Manage"/>
+                        </folder>
+                    </folder>
+                </folders>
+            </x:XData>
+        </XmlDataProvider>
+            
+    </Window.Resources>
     <Grid Name="Rootlayout">
         <TabControl Name="tablecontrol">
-            <TabItem Header="代码绑定">
+            <TabItem Header="CodeBinding">
                 <Grid>
                     <Button Content="Button" HorizontalAlignment="Left" Margin="49,116,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
                     <TextBox Name="tbCode"  HorizontalAlignment="Left" Height="22" Margin="49,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -14,14 +34,14 @@
                     <TextBox Name="tbCode1"  HorizontalAlignment="Left" Height="22" Margin="259,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="控件绑定">
+            <TabItem Header="FrameworkElementBInding">
                 <Grid>
                     <Slider x:Name="slider" HorizontalAlignment="Left" Margin="50,195,0,0" VerticalAlignment="Top" Width="393"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="113,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Value, ElementName=slider}"/>
 
                 </Grid>
             </TabItem>
-            <TabItem Header="资源绑定">
+            <TabItem Header="ResourceBinding">
                 <StackPanel>
                     <StackPanel.Resources>
                         <sys:String x:Key="string1">this is a static string resource</sys:String>
@@ -48,6 +68,42 @@
                     </ListBox>
                     
                 </StackPanel>
+            </TabItem>
+            <TabItem Header="DataTemplate">
+                <ListBox Name="lisboxDataTemplatebinding">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Path=Id}"/>
+                                <TextBlock Text="{Binding Path=Name}"/>
+                                <TextBlock Text="{Binding Path=Age}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                
+            </TabItem>
+            <TabItem Header="XML">
+                <StackPanel>
+                    <ListView Name="listviewXML">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ID" DisplayMemberBinding="{Binding XPath=@Id}"/>
+                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding XPath=Name}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Content="Load XML" Click="ButtonXML_Click_1" />
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="XData">
+                <TreeView ItemsSource="{Binding Source={StaticResource xpd}}">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding XPath=folder}">
+                            <TextBlock Text="{Binding XPath=@Name}" />
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
             </TabItem>
         </TabControl>
     </Grid>

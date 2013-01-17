@@ -21,12 +21,17 @@ namespace DataBinding_Sample
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private void DataTemplateBinding()
         {
-            InitializeComponent();
-            ItemSourceBinding();
-            DataTemplateBinding();
+            List<Student> stus = new List<Student>()
+            {
+                new Student(){Id="1", Name="Tom", Age="15"},
+                new Student(){Id="2", Name="Jim", Age="15"},
+                new Student(){Id="3", Name="Lily", Age="15"},
+                new Student(){Id="4", Name="Lucy", Age="15"},
+                new Student(){Id="5", Name="Tim", Age="15"}
+            };
+            lisboxDataTemplatebinding.ItemsSource = stus;
         }
-
     }
 }
