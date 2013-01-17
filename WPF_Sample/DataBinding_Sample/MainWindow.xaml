@@ -94,7 +94,6 @@
                         </ListView.View>
                     </ListView>
                     <Button Content="Load XML" Click="ButtonXML_Click_1" />
-                    <Button Content="Load Name Start With T" Click="ButtonNameT_Click_1"/>
                 </StackPanel>
             </TabItem>
             <TabItem Header="XData">
@@ -106,6 +105,20 @@
                     </TreeView.ItemTemplate>
                 </TreeView>
             </TabItem>
+            <TabItem Header="LINQ">
+                <StackPanel>
+                    <ListView Name="listviewLinq">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}"/>
+                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Content="Load Name Start With T" Click="ButtonNameT_Click_1"/>
+                </StackPanel>
+            </TabItem>
+
         </TabControl>
     </Grid>
 </Window>
