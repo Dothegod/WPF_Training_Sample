@@ -118,6 +118,13 @@
                     <Button Content="Load Name Start With T" Click="ButtonNameT_Click_1"/>
                 </StackPanel>
             </TabItem>
+            <TabItem Header="ObjectDataProvider">
+                <StackPanel>
+                    <TextBox Name="tbArg1"/>
+                    <TextBox Name="tbArg2"/>
+                    <TextBox Name="tbResult"/>
+                </StackPanel>                
+            </TabItem>
 
         </TabControl>
     </Grid>
