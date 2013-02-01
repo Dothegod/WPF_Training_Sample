@@ -54,6 +54,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Validation.cs" />
+    <Compile Include="LinqBinding.cs" />
+    <Compile Include="ObjectDataProvider.cs" />
     <Compile Include="XMLbinding.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -22,14 +22,17 @@ namespace DataBinding_Sample
     /// </summary>
     public partial class MainWindow : Window
     {
-        private void ButtonXML_Click_1(object sender, RoutedEventArgs e)
+        private void ButtonNameT_Click_1(object sender, RoutedEventArgs e)
         {
-            XmlDataProvider xpd = new XmlDataProvider();
-            xpd.Source = new Uri(@"..\..\StuInfo.xml",UriKind.Relative);
-            xpd.XPath = @"/students/student";
-
-            listviewXML.DataContext = xpd;
-            listviewXML.SetBinding(ListView.ItemsSourceProperty, new Binding());
+            XDocument doc = XDocument.Load(@"..\..\StuInfo.xml");
+            listviewLinq.ItemsSource =
+                from element in doc.Descendants("student")
+                where element.Element("Name").Value.StartsWith("T")
+                select new Student()
+                {
+                    Id = element.Attribute("Id").Value,
+                    Name = element.Element("Name").Value,
+                };
         }
     }
 }

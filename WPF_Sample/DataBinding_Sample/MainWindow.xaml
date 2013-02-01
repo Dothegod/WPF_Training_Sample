@@ -34,7 +34,7 @@
                     <TextBox Name="tbCode1"  HorizontalAlignment="Left" Height="22" Margin="259,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="FrameworkElementBInding">
+            <TabItem Header="UIElementBInding">
                 <Grid>
                     <Slider x:Name="slider" HorizontalAlignment="Left" Margin="50,195,0,0" VerticalAlignment="Top" Width="393"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="113,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Value, ElementName=slider}"/>
@@ -94,7 +94,6 @@
                         </ListView.View>
                     </ListView>
                     <Button Content="Load XML" Click="ButtonXML_Click_1" />
-                    <Button Content="Load Name Start With T" Click="ButtonNameT_Click_1"/>
                 </StackPanel>
             </TabItem>
             <TabItem Header="XData">
@@ -106,6 +105,27 @@
                     </TreeView.ItemTemplate>
                 </TreeView>
             </TabItem>
+            <TabItem Header="LINQ">
+                <StackPanel>
+                    <ListView Name="listviewLinq">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}"/>
+                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Content="Load Name Start With T" Click="ButtonNameT_Click_1"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="ObjectDataProvider">
+                <StackPanel>
+                    <TextBox Name="tbArg1"/>
+                    <TextBox Name="tbArg2"/>
+                    <TextBox Name="tbResult"/>
+                </StackPanel>                
+            </TabItem>
+
             <TabItem Header="Validation">
                 <Grid>
                     <TextBox Name="textboxValid" HorizontalAlignment="Left" Height="23" Margin="30,29,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="442"/>

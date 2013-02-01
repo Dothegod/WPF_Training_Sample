@@ -26,6 +26,7 @@ namespace DataBinding_Sample
             InitializeComponent();
             ItemSourceBinding();
             DataTemplateBinding();
+            ObjectDataProviderBinding();
             ValidationRuleBinding();
         }
 
