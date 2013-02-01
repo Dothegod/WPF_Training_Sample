@@ -106,6 +106,12 @@
                     </TreeView.ItemTemplate>
                 </TreeView>
             </TabItem>
+            <TabItem Header="Validation">
+                <Grid>
+                    <TextBox Name="textboxValid" HorizontalAlignment="Left" Height="23" Margin="30,29,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="442"/>
+                    <Slider Name="sliderValid" HorizontalAlignment="Left" Margin="30,116,0,0" VerticalAlignment="Top" Width="455" Maximum="120"/>
+                </Grid>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
