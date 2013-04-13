@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Sample", "WPF_Sample\WP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBinding_Sample", "DataBinding_Sample\DataBinding_Sample.csproj", "{BB7A12F0-0F4B-4B1D-A259-43B9A3C0C75A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event_Sample", "Event_Sample\Event_Sample.csproj", "{7F8715C9-9844-4D05-8727-389C8B0C34B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{BB7A12F0-0F4B-4B1D-A259-43B9A3C0C75A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB7A12F0-0F4B-4B1D-A259-43B9A3C0C75A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB7A12F0-0F4B-4B1D-A259-43B9A3C0C75A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F8715C9-9844-4D05-8727-389C8B0C34B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F8715C9-9844-4D05-8727-389C8B0C34B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F8715C9-9844-4D05-8727-389C8B0C34B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F8715C9-9844-4D05-8727-389C8B0C34B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
