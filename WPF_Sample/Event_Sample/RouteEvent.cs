@@ -15,16 +15,20 @@ using System.Windows.Shapes;
 
 namespace Event_Sample
 {
-    /// <summary>
-    /// MainWindow.xaml 的交互逻辑
-    /// </summary>
+
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private void Button_Click_R(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
-            g1.AddHandler(Button.ClickEvent, new RoutedEventHandler(Button_Click_1));
-            ButtonLClick();
+            Button f = e.OriginalSource as Button;
+            
+            MessageBox.Show(f.Content as string);
+        }
+
+        private void ButtonLClick()
+        {
+            RouteEventRootGrid.AddHandler(Button.ClickEvent, new RoutedEventHandler(Button_Click_R));
+            
         }
     }
 }

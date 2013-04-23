@@ -15,16 +15,20 @@ using System.Windows.Shapes;
 
 namespace Event_Sample
 {
-    /// <summary>
-    /// MainWindow.xaml 的交互逻辑
-    /// </summary>
+
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private void Grid_MouseUp_1(object sender, MouseButtonEventArgs e)
         {
-            InitializeComponent();
-            g1.AddHandler(Button.ClickEvent, new RoutedEventHandler(Button_Click_1));
-            ButtonLClick();
+            Grid g = sender as Grid;
+            MessageBox.Show(g.Name);
+            e.Handled = true;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            FrameworkElement f = sender as FrameworkElement;
+            MessageBox.Show(f.Name);
         }
     }
 }
